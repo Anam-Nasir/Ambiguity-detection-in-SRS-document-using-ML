@@ -110,7 +110,7 @@ fit1 = bestfeatures.fit(Test_X,Test_Y)
 X_important_train = fit.transform(Train_X)
 X_important_test = fit.transform(Test_X)
 
-
+# Classifier - Algorithm - XGBoost
 modelc = XGBClassifier(objective='multi:softmax',
                       num_class=2,
                       n_estimators=100,
@@ -149,15 +149,6 @@ print("Naive Bayes Accuracy: %.2f%%" % (NB_accuracy * 100.0))
 # confusion matrix and classification report(precision, recall, F1-score)
 print(classification_report(Test_Y, Naive.predict(X_important_test)))
 print(confusion_matrix(Test_Y, Naive.predict(X_important_test)))
-# Classifier - Algorithm - SVM
-# fit the training dataset on the classifier
-#SVM = svm.SVC(C=1.0, kernel='linear', degree=3, gamma='auto')
-#SVM.fit(X_important_train,Train_Y)
-## predict the labels on validation dataset
-#predictions_SVM = SVM.predict(X_important_test)
-## predict the labels on validation dataset
-#SVM_accuracy = accuracy_score(Test_Y, predictions_SVM)
-#print("SVM Accuracy: %.2f%%" % (SVM_accuracy * 100.0))
 
 def plot_bar_x():
     # this is for plotting purpose
